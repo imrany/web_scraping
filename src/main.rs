@@ -14,9 +14,7 @@ fn browse_page(url:&str)-> Result<(), Error>{
     tab.wait_for_element("#userStatusPadding > a").expect("Failed to select element").click().expect("Failed to click");
     let iframe=tab.find_element("iframe")?;
     println!("{:?}",iframe);
-    // login_form.wait_for_element("#login_password")?;
     let png_data=tab.capture_screenshot(Page::CaptureScreenshotFormatOption::Png, Some(75),None,true)?;
-    // let png_data=login_form.capture_screenshot(Page::CaptureScreenshotFormatOption::Png)?;
     fs::write("screenshot.png", png_data)?;
 
     Ok(())
