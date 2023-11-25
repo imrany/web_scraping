@@ -1840,6 +1840,7 @@ dependencies = [
 name = "web_scraping"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "csv",
  "headless_chrome",
  "reqwest",
